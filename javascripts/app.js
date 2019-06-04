@@ -99,8 +99,7 @@ function goDirection (aRover) {
       moveBackward(aRover);
       break;
      default:
-       NaN;
-       console.log("That is not a valid command.")
+      console.log("That is not a valid command.");
       }
     
       aRover.travelLog.push([aRover.x, aRover.y]);
