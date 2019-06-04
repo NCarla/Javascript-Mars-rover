@@ -19,105 +19,103 @@ var rover3 = {
   travelLog: []
 }
 
-function turnLeft(rover){
+function turnLeft(aRover){
   console.log("turnLeft was called!");
-  switch (rover.direction) {
+  switch (aRover.direction) {
     case "N":
-      rover.direction = "W";
+      aRover.direction = "W";
       break;
     case "W":
-      rover.direction = "S";
+      aRover.direction = "S";
       break;
     case "S":
-      rover.direction = "E";
+      aRover.direction = "E";
       break;
     case "E":
-      rover.direction = "N";
+      aRover.direction = "N";
       break;
   } 
 }
 
-function turnRight(rover){
+function turnRight(aRover){
   console.log("turnRight was called!");
-  switch (rover.direction) {
+  switch (aRover.direction) {
     case "N" :
-      rover.direction = "E";
+      aRover.direction = "E";
       break;
     case "W":
-      rover.direction = "N";
+      aRover.direction = "N";
       break;
     case "S" :
-      rover.direction = "W";
+      aRover.direction = "W";
       break;
     case "E":
-      rover.direction = "S";
+      aRover.direction = "S";
       break;
   } 
 }
 
-function moveForward(rover){
+function moveForward(aRover){
   console.log("moveForward was called");
-  if (rover.direction == "S" && rover.y < 9) {
-    rover.y += 1;
-  } else if (rover.direction == "N" && rover.y > 0) {
-    rover.y -= 1;
-  } else if (rover.direction == "E" && rover.x < 9) {
-    rover.x += 1;
-  } else if (rover.direction === "W" && rover.x > 0) {
-    rover.x -= 1;
+  if (aRover.direction == "S" && aRover.y < 9) {
+    aRover.y += 1;
+  } else if (aRover.direction == "N" && aRover.y > 0) {
+    aRover.y -= 1;
+  } else if (aRover.direction == "E" && aRover.x < 9) {
+    aRover.x += 1;
+  } else if (aRover.direction === "W" && aRover.x > 0) {
+    aRover.x -= 1;
   }
 }
 
-function moveBackward(rover){
+function moveBackward(aRover){
   console.log("moveBackward was called");
-  if (rover.direction == "S" && rover.y > 0) {
-    rover.y -= 1;
-  } else if (rover.direction == "N" && rover.y < 9) {
-    rover.y += 1;
-  } else if (rover.direction == "E" && rover.x > 0) {
-    rover.x -= 1;
-  } else if (rover.direction === "W" && rover.x < 9) {
-    rover.x += 1;
+  if (aRover.direction == "S" && aRover.y > 0) {
+    aRover.y -= 1;
+  } else if (aRover.direction == "N" && aRover.y < 9) {
+    aRover.y += 1;
+  } else if (aRover.direction == "E" && aRover.x > 0) {
+    aRover.x -= 1;
+  } else if (aRover.direction === "W" && aRover.x < 9) {
+    aRover.x += 1;
   }
 }
 
 var directions = prompt("What are your rover commands?");
 
-function goDirection (rover) {
+function goDirection (aRover, someDirectons) {
  for(let i = 0; i < directions.length; i++ && i < directions.length) {
   let letter = directions[i];
    switch (letter) {
      case "r":
-      turnRight(rover);
+      turnRight(aRover);
       break;
      case "f":
-      moveForward(rover);
+      moveForward(aRover);
       break;
      case "l":
-      turnLeft(rover);
+      turnLeft(aRover);
       break;
      case "b":
-      moveBackward(rover);
+      moveBackward(aRover);
       break;
      default:
        NaN;
       }
     
-      rover.travelLog.push([rover.x, rover.y]);
-      console.log(rover.travelLog);
-      if (rover.x == rover2.x && rover.y == rover2.y){
-        console.log("Stop! Rover & rover2 will collide!");
-      } else if (rover.x == rover3.x && rover.y == rover3.y){
-        console.log("Stop! Rover & rover3 will collide!");
-      } else if (rover2.x == rover3.x && rover2.y == rover3.y){
-        console.log("Stop! Rover2 & rover3 will collide!");
+      aRover.travelLog.push([aRover.x, aRover.y]);
+      console.log(aRover.travelLog);
+      if (aRover != rover2 && aRover.x == rover2.x && aRover.y == rover2.y){
+        console.log("Stop! aRover & rover2 will collide!");
+      } else if (aRover != rover3 && aRover.x == rover3.x && aRover.y == rover3.y){
+        console.log("Stop! aRover & rover3 will collide!");
       }
 
       for (var j = 0; j < grid.length; j++){
         var row = grid[j];
         for (var k = 0; k < row.length; k++){
           var column = row[k];
-          if (column === "X" && rover.x == j && rover.y == k){
+          if (column === "X" && aRover.x == j && aRover.y == k){
             console.log("Obstacle Found at: " + j + ", " + k + "Stop rover!");}
           }
         }
