@@ -59,12 +59,20 @@ function moveForward(aRover){
   console.log("moveForward was called");
   if (aRover.direction == "S" && aRover.y < 9) {
     aRover.y += 1;
+  } else if (aRover.direction == "S" && aRover.y = 9) {
+    console.log("Rover at boundary!");
   } else if (aRover.direction == "N" && aRover.y > 0) {
     aRover.y -= 1;
+  } else if (aRover.direction == "N" && aRover.y = 0) {
+    console.log("Rover at boundary!");
   } else if (aRover.direction == "E" && aRover.x < 9) {
     aRover.x += 1;
+  } else if (aRover.direction == "E" && aRover.y = 9) {
+    console.log("Rover at boundary!");
   } else if (aRover.direction === "W" && aRover.x > 0) {
     aRover.x -= 1;
+  } else if (aRover.direction == "W" && aRover.y = 0) {
+    console.log("Rover at boundary!");
   }
 }
 
@@ -72,12 +80,20 @@ function moveBackward(aRover){
   console.log("moveBackward was called");
   if (aRover.direction == "S" && aRover.y > 0) {
     aRover.y -= 1;
+  } else if (aRover.direction == "S" && aRover.y = 0) {
+    console.log("Rover at boundary!");
   } else if (aRover.direction == "N" && aRover.y < 9) {
     aRover.y += 1;
+  } else if (aRover.direction == "N" && aRover.y = 9) {
+    console.log("Rover at boundary!");
   } else if (aRover.direction == "E" && aRover.x > 0) {
     aRover.x -= 1;
+  } else if (aRover.direction == "E" && aRover.y = 0) {
+    console.log("Rover at boundary!");
   } else if (aRover.direction === "W" && aRover.x < 9) {
     aRover.x += 1;
+  } else if (aRover.direction == "W" && aRover.y = 9) {
+    console.log("Rover at boundary!");
   }
 }
 
