@@ -81,9 +81,8 @@ function moveBackward(aRover){
   }
 }
 
-var directions = prompt("What are your rover commands?");
-
-function goDirection (aRover, someDirectons) {
+function goDirection (aRover) {
+  let directions = prompt("What are your rover commands?");
  for(let i = 0; i < directions.length; i++ && i < directions.length) {
   let letter = directions[i];
    switch (letter) {
