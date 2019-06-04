@@ -100,6 +100,7 @@ function goDirection (aRover) {
       break;
      default:
        NaN;
+       console.log("That is not a valid command.")
       }
     
       aRover.travelLog.push([aRover.x, aRover.y]);
