@@ -105,10 +105,12 @@ function goDirection (aRover, someDirectons) {
     
       aRover.travelLog.push([aRover.x, aRover.y]);
       console.log(aRover.travelLog);
-      if (aRover != rover2 && aRover.x == rover2.x && aRover.y == rover2.y){
-        console.log("Stop! aRover & rover2 will collide!");
-      } else if (aRover != rover3 && aRover.x == rover3.x && aRover.y == rover3.y){
-        console.log("Stop! aRover & rover3 will collide!");
+      if (rover.x == rover2.x && rover.y == rover2.y){
+        console.log("Stop! Rover & rover2 will collide!");
+      } else if (rover.x == rover3.x && rover.y == rover3.y){
+        console.log("Stop! Rover & rover3 will collide!");
+      } else if (rover2.x == rover3.x && rover2.y == rover3.y){
+        console.log("Stop! Rover2 & rover3 will collide!");
       }
 
       for (var j = 0; j < grid.length; j++){
